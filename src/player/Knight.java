@@ -13,7 +13,7 @@ public class Knight {
             if(enemy != 0){
                 Location loc = new Location(uc.readOnSharedArray(i+1), uc.readOnSharedArray(i+2));
                 Direction dir = uc.getLocation().directionTo(loc);
-                uc.move(dir);
+                if(uc.canMove(dir)) uc.move(dir);
             }
         }
     }
