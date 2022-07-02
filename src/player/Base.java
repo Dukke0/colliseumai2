@@ -12,7 +12,7 @@ public class Base {
             Direction[] directions = Direction.values();
 
             for (Direction dir : directions) {
-                if (uc.canSpawn(UnitType.EXPLORER, dir)) uc.spawn(UnitType.EXPLORER, dir);
+                if (uc.canSpawn(UnitType.KNIGHT, dir)) uc.spawn(UnitType.KNIGHT, dir);
             }
         }
     }

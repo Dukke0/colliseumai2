@@ -1,7 +1,6 @@
 package demoplayer;
 
 import aic2022.user.*;
-import player.Base;
 
 public class UnitPlayer {
 
@@ -25,19 +24,12 @@ public class UnitPlayer {
 
 			/*If this unit is a base, try spawning a barbarian at direction dir*/
 			if (uc.getType() == UnitType.BASE) {
-				Base.MakeDecision(uc);
+				if (uc.canSpawn(UnitType.BARBARIAN, dir)) uc.spawn(UnitType.BARBARIAN, dir);
 			}
 
-			/*Else, go through all visible units and attack the first one you see*/
-			else {
-				UnitInfo[] visibleEnemies = uc.senseUnits(opponent);
-				for (int i = 0; i < visibleEnemies.length; ++i) {
-					if (uc.canAttack(visibleEnemies[i].getLocation())) uc.attack(visibleEnemies[i].getLocation());
-				}
-			}
+
 
 			uc.yield(); //End of turn
 		}
 	}
 }
-
