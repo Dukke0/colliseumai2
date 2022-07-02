@@ -1,6 +1,7 @@
 package demoplayer;
 
 import aic2022.user.*;
+import player.Base;
 
 public class UnitPlayer {
 
@@ -24,7 +25,7 @@ public class UnitPlayer {
 
 			/*If this unit is a base, try spawning a barbarian at direction dir*/
 			if (uc.getType() == UnitType.BASE) {
-				if (uc.canSpawn(UnitType.BARBARIAN, dir)) uc.spawn(UnitType.BARBARIAN, dir);
+				Base.MakeDecision(uc);
 			}
 
 			/*Else, go through all visible units and attack the first one you see*/
