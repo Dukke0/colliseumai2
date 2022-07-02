@@ -35,6 +35,8 @@ public class Unit {
                     uc.writeOnSharedArray(i+2, unit.getLocation().y);
                     break;
                 }
+
+
             }
         }
         UnitInfo[] neutral = uc.senseUnits(Team.NEUTRAL);

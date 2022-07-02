@@ -33,6 +33,10 @@ public class UnitPlayer {
 				for (int i = 0; i < visibleEnemies.length; ++i) {
 					if (uc.canAttack(visibleEnemies[i].getLocation())) uc.attack(visibleEnemies[i].getLocation());
 				}
+				UnitInfo[] visibleNeutrals = uc.senseUnits(Team.NEUTRAL);
+				for (int i = 0; i < visibleNeutrals.length; ++i) {
+					if (uc.canAttack(visibleNeutrals[i].getLocation())) uc.attack(visibleNeutrals[i].getLocation());
+				}
 
 				Knight.goForObjective(uc);
 			}
